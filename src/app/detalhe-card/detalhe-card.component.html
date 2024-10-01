@@ -1,0 +1,11 @@
+<div class="card-container">
+    <div *ngFor="let pessoa of pessoas" class="card">
+      <!-- <img src="assets/deletaricon.png" width="20" height="20" class="delete-icon" (click)="apagarPessoa(pessoa.id)"> -->
+      <h2>Nome</h2>
+      <h3>Matheus Gileade</h3>
+      <h2>Idade</h2>
+      <h3>19</h3>
+      <input type="hidden" id="idPessoa" name="pessoaIdNome" value="{{pessoa.id}}" />
+      <!-- <button>apagar</button> -->
+    </div>
+  </div>
