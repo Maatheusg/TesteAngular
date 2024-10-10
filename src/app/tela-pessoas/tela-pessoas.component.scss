@@ -1,3 +1,382 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// .popup-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000; /* Certifique-se de que esteja acima de outros elementos */
+// }
+
+// .popup-content {
+//   background-color: white;
+//   padding: 30px;
+//   border-radius: 15px;
+//   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+//   max-width: 600px;
+//   width: 90%; /* Ajusta para caber melhor em telas menores */
+//   text-align: left; /* Texto alinhado à esquerda */
+//   position: relative; /* Necessário para posicionar o ícone no canto superior direito */
+//   font-family: 'Roboto', sans-serif;
+//   animation: popup-fade-in 0.3s ease-out; /* Animação suave ao abrir */
+// }
+
+// @keyframes popup-fade-in {
+//   from {
+//     opacity: 0;
+//     transform: scale(0.9);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+// }
+
+// /* Ícone de fechar (close-btn) posicionado no canto superior direito */
+// .close-btn {
+//   position: absolute;
+//   top: 10px; /* Ajusta a distância do topo */
+//   right: 10px; /* Ajusta a distância da direita */
+//   background-color: transparent;
+//   border: none;
+//   cursor: pointer;
+//   width: 30px;
+//   height: 30px;
+// }
+
+// .close-btn img {
+//   width: 100%;
+//   height: auto;
+//   transition: transform 0.2s ease;
+// }
+
+// .close-btn:hover img {
+//   transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+// }
+
+// h2 {
+//   font-size: 22px;
+//   margin-bottom: 10px;
+//   color: #333;
+//   font-weight: 700; /* Fonte em negrito */
+// }
+
+// h3 {
+//   font-size: 18px;
+//   margin-bottom: 15px;
+//   color: #666; /* Cor mais clara para o texto */
+//   font-weight: 400; /* Fonte normal */
+// }
+
+// /* Estilos do card principal */
+// .card-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 15px; /* Espaçamento entre os cards */
+//   justify-content: flex-start;
+//   padding: 20px;
+// }
+
+// .card {
+//   background-color: #f0f0f0; /* Fundo cinza claro */
+//   border-radius: 10px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+//   padding: 20px;
+//   width: calc(25% - 15px); /* Largura ajustada */
+//   max-width: 250px;
+//   box-sizing: border-box;
+//   position: relative; /* Necessário para o posicionamento absoluto do ícone */
+//   text-align: left;
+//   font-family: 'Roboto', sans-serif;
+
+//   &:hover {
+//     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
+//     background-color: #e0e0e0; /* Fundo mais escuro */
+//     transform: translateY(-5px); /* Levanta o card */
+//     transition: all 0.3s ease; /* Transição suave */
+//   }
+
+//   /* Ícone de deletar posicionado no canto superior direito do card */
+//   .delete-icon {
+//     position: absolute;
+//     top: 10px; /* Distância do topo */
+//     right: 10px; /* Distância da direita */
+//     width: 24px; /* Tamanho do ícone */
+//     height: 24px;
+//     cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar sobre a imagem */
+//     display: block; /* Garante que o ícone esteja sempre visível */
+//     z-index: 10; /* Garante que o ícone fique acima de outros elementos */
+//     background: transparent; /* Garante que o fundo da imagem seja transparente */
+
+//     &:hover {
+//       transform: scale(1.1); /* Aumenta o tamanho do ícone no hover */
+//       transition: transform 0.3s ease; /* Transição suave */
+//     }
+//   }
+// }
+
+// /* Media Queries para responsividade */
+
+// /* Pequenas telas (telefones, até 600px) */
+// @media (max-width: 600px) {
+//   .popup-content {
+//     max-width: 100%;
+//     padding: 15px;
+//   }
+
+//   h2 {
+//     font-size: 18px;
+//   }
+
+//   h3 {
+//     font-size: 16px;
+//   }
+  
+//   .card {
+//     width: 100%; /* Cards ocupam 100% da largura no mobile */
+//     max-width: 100%;
+//   }
+// }
+
+// /* Telas médias (tablets, entre 600px e 900px) */
+// @media (min-width: 600px) and (max-width: 900px) {
+//   .card {
+//     width: calc(50% - 15px); /* Cards ocupam 50% da largura em tablets */
+//   }
+
+//   h2 {
+//     font-size: 18px;
+//   }
+
+//   h3 {
+//     font-size: 16px;
+//   }
+// }
+
+// /* Telas grandes (desktops, acima de 900px) */
+// @media (min-width: 900px) {
+//   .card {
+//     width: calc(25% - 15px); /* Cards ocupam 25% da largura em telas grandes */
+//   }
+// }
+
+//    SEPARACAO
+
+
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+//
+//.popup-overlay {
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+//  background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  z-index: 1000; /* Certifique-se de que esteja acima de outros elementos */
+//}
+//
+//.popup-content {
+//  background-color: white;
+//  padding: 30px;
+//  border-radius: 15px;
+//  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+//  max-width: 600px;
+//  width: 90%; /* Ajusta para caber melhor em telas menores */
+//  text-align: left; /* Texto alinhado à esquerda */
+//  position: relative; /* Necessário para posicionar o ícone no canto superior direito */
+//  font-family: 'Roboto', sans-serif;
+//  animation: popup-fade-in 0.3s ease-out; /* Animação suave ao abrir */
+//}
+//
+//@keyframes popup-fade-in {
+//  from {
+//    opacity: 0;
+//    transform: scale(0.9);
+//  }
+//  to {
+//    opacity: 1;
+//    transform: scale(1);
+//  }
+//}
+//
+///* Ícone de fechar (close-btn) posicionado no canto superior direito */
+// /* Ícone de fechar (close-btn) posicionado no canto superior direito */
+// .close-btn {
+//   position: absolute;
+//   top: 10px; /* Ajusta a distância do topo */
+//   right: 10px; /* Ajusta a distância da direita */
+//   background-color: transparent;
+//   border: none;
+//   cursor: pointer;
+//   width: 30px;
+//   height: 30px;
+// }
+// .close-btn img {
+//   width: 100%;
+//   height: auto;
+//   transition: transform 0.2s ease;
+// }
+// .close-btn:hover img {
+//   transform: scale(2); /* Aumenta a imagem ao passar o mouse */
+// }
+//
+//h2 {
+//  font-size: 22px;
+//  margin-bottom: 10px;
+//  color: #333;
+//  font-weight: 700; /* Fonte em negrito */
+//}
+//
+//h3 {
+//  font-size: 18px;
+//  margin-bottom: 15px;
+//  color: #666; /* Cor mais clara para o texto */
+//  font-weight: 400; /* Fonte normal */
+//}
+//
+///* Estilos do card principal */
+//.card-container {
+//  display: flex;
+//  flex-wrap: wrap;
+//  gap: 15px; /* Espaçamento entre os cards */
+//  justify-content: flex-start;
+//  padding: 20px;
+//}
+//
+//.card {
+//  background-color: #f0f0f0; /* Fundo cinza claro */
+//  border-radius: 10px;
+//  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+//  padding: 20px;
+//  width: calc(25% - 15px); /* Largura ajustada */
+//  max-width: 250px;
+//  box-sizing: border-box;
+//  position: relative; /* Necessário para o posicionamento absoluto do ícone */
+//  text-align: left;
+//  font-family: 'Roboto', sans-serif;
+//
+//  &:hover {
+//    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
+//    background-color: #e0e0e0; /* Fundo mais escuro */
+//    transform: translateY(-5px); /* Levanta o card */
+//    transition: all 0.3s ease; /* Transição suave */
+//  }
+//
+//  /* Ícone de deletar posicionado no canto superior direito do card */
+//  .delete-icon {
+//    position: absolute;
+//    top: 10px; /* Distância do topo */
+//    right: 10px; /* Distância da direita */
+//    width: 24px; /* Tamanho do ícone */
+//    height: 24px;
+//    cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar sobre a imagem */
+//    display: block; /* Garante que o ícone esteja sempre visível */
+//    z-index: 10; /* Garante que o ícone fique acima de outros elementos */
+//    background: transparent; /* Garante que o fundo da imagem seja transparente */
+//
+//    &:hover {
+//      transform: scale(1.1); /* Aumenta o tamanho do ícone no hover */
+//      transition: transform 0.3s ease; /* Transição suave */
+//    }
+//  }
+//}
+//
+///* Estilização dos inputs de telefone, endereço e CPF */
+//input[type="text"] {
+//  width: 100%;
+//  padding: 10px;
+//  margin-bottom: 15px;
+//  border: 1px solid #ccc; /* Borda leve */
+//  border-radius: 5px;
+//  font-size: 16px;
+//  font-family: 'Roboto', sans-serif;
+//  box-sizing: border-box;
+//  transition: border-color 0.3s ease;
+//
+//  &:focus {
+//    border-color: #666; /* Borda muda de cor ao focar */
+//    outline: none; /* Remove o outline padrão */
+//  }
+//}
+//
+///* Estilo para o botão "Salvar" */
+//button {
+//  background-color: #4caf50; /* Verde para o botão */
+//  color: white;
+//  border: none;
+//  border-radius: 5px;
+//  padding: 10px 20px;
+//  font-size: 16px;
+//  cursor: pointer;
+//  transition: background-color 0.3s ease, transform 0.3s ease;
+//
+//  &:hover {
+//    background-color: #45a049; /* Verde mais escuro no hover */
+//    transform: scale(1.05); /* Pequeno zoom no hover */
+//  }
+//}
+//
+///* Media Queries para responsividade */
+//
+///* Pequenas telas (telefones, até 600px) */
+//@media (max-width: 600px) {
+//  .popup-content {
+//    max-width: 100%;
+//    padding: 15px;
+//  }
+//
+//  h2 {
+//    font-size: 18px;
+//  }
+//
+//  h3 {
+//    font-size: 16px;
+//  }
+//
+//  .card {
+//    width: 100%; /* Cards ocupam 100% da largura no mobile */
+//    max-width: 100%;
+//  }
+//
+//  input[type="text"] {
+//    font-size: 14px; /* Ajusta o tamanho do texto dos inputs para telas menores */
+//  }
+//
+//  button {
+//    font-size: 14px;
+//    padding: 8px 15px; /* Botão menor em telas pequenas */
+//  }
+//}
+//
+///* Telas médias (tablets, entre 600px e 900px) */
+//@media (min-width: 600px) and (max-width: 900px) {
+//  .card {
+//    width: calc(50% - 15px); /* Cards ocupam 50% da largura em tablets */
+//  }
+//
+//  h2 {
+//    font-size: 18px;
+//  }
+//
+//  h3 {
+//    font-size: 16px;
+//  }
+//}
+//
+///* Telas grandes (desktops, acima de 900px) */
+//@media (min-width: 900px) {
+//  .card {
+//    width: calc(25% - 15px); /* Cards ocupam 25% da largura em telas grandes */
+//  }
+//}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .popup-overlay {
@@ -24,8 +403,11 @@
   position: relative; /* Necessário para posicionar o ícone no canto superior direito */
   font-family: 'Roboto', sans-serif;
   animation: popup-fade-in 0.3s ease-out; /* Animação suave ao abrir */
+  overflow-y: auto; /* Adiciona rolagem para telas pequenas */
+  max-height: 80vh; /* Limita a altura para caber em telas menores */
 }
 
+/* Animação de abertura */
 @keyframes popup-fade-in {
   from {
     opacity: 0;
@@ -37,96 +419,128 @@
   }
 }
 
-/* Ícone de fechar (close-btn) posicionado no canto superior direito */
+/* Ícone de fechar */
 .close-btn {
   position: absolute;
-  top: 10px; /* Ajusta a distância do topo */
-  right: 10px; /* Ajusta a distância da direita */
+  top: 10px;
+  right: 10px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   width: 30px;
   height: 30px;
 }
-
 .close-btn img {
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
 }
-
 .close-btn:hover img {
-  transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+  transform: scale(1.2);
 }
 
 h2 {
   font-size: 22px;
   margin-bottom: 10px;
   color: #333;
-  font-weight: 700; /* Fonte em negrito */
+  font-weight: 700;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: 15px;
-  color: #666; /* Cor mais clara para o texto */
-  font-weight: 400; /* Fonte normal */
+  color: #666;
+  font-weight: 400;
 }
 
 /* Estilos do card principal */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Espaçamento entre os cards */
+  gap: 15px;
   justify-content: flex-start;
   padding: 20px;
 }
 
 .card {
-  background-color: #f0f0f0; /* Fundo cinza claro */
+  background-color: #f0f0f0;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: calc(25% - 15px); /* Largura ajustada */
+  width: calc(25% - 15px);
   max-width: 250px;
   box-sizing: border-box;
-  position: relative; /* Necessário para o posicionamento absoluto do ícone */
+  position: relative;
   text-align: left;
   font-family: 'Roboto', sans-serif;
 
   &:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
-    background-color: #e0e0e0; /* Fundo mais escuro */
-    transform: translateY(-5px); /* Levanta o card */
-    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #e0e0e0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
   }
 
-  /* Ícone de deletar posicionado no canto superior direito do card */
   .delete-icon {
     position: absolute;
-    top: 10px; /* Distância do topo */
-    right: 10px; /* Distância da direita */
-    width: 24px; /* Tamanho do ícone */
+    top: 10px;
+    right: 10px;
+    width: 24px;
     height: 24px;
-    cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar sobre a imagem */
-    display: block; /* Garante que o ícone esteja sempre visível */
-    z-index: 10; /* Garante que o ícone fique acima de outros elementos */
-    background: transparent; /* Garante que o fundo da imagem seja transparente */
+    cursor: pointer;
+    display: block;
+    z-index: 10;
+    background: transparent;
 
     &:hover {
-      transform: scale(1.1); /* Aumenta o tamanho do ícone no hover */
-      transition: transform 0.3s ease; /* Transição suave */
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
     }
   }
 }
 
-/* Media Queries para responsividade */
+/* Estilização dos inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #666;
+    outline: none;
+  }
+}
+
+/* Estilo para o botão "Salvar" */
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsividade */
 
 /* Pequenas telas (telefones, até 600px) */
 @media (max-width: 600px) {
   .popup-content {
-    max-width: 100%;
     padding: 15px;
+    max-width: 100%;
   }
 
   h2 {
@@ -136,17 +550,26 @@ h3 {
   h3 {
     font-size: 16px;
   }
-  
+
   .card {
-    width: 100%; /* Cards ocupam 100% da largura no mobile */
+    width: 100%;
     max-width: 100%;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
   }
 }
 
 /* Telas médias (tablets, entre 600px e 900px) */
 @media (min-width: 600px) and (max-width: 900px) {
   .card {
-    width: calc(50% - 15px); /* Cards ocupam 50% da largura em tablets */
+    width: calc(50% - 15px);
   }
 
   h2 {
@@ -161,6 +584,6 @@ h3 {
 /* Telas grandes (desktops, acima de 900px) */
 @media (min-width: 900px) {
   .card {
-    width: calc(25% - 15px); /* Cards ocupam 25% da largura em telas grandes */
+    width: calc(25% - 15px);
   }
 }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
+import { ConnectionRabbitService } from '../serviceConnectionRabbitMq/connection-rabbit.service';
+import { sendNotification } from '../serviceNotification/notification.service';
+import { SenderService } from '../serviceSender/sender.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +12,10 @@ import { RouterOutlet, Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private router: Router){}
-
+  private srvSender: any;
+  constructor(private router: Router){
+    this.srvSender = new SenderService();
+  }
   click(): void {
     let nome = document.getElementById('nomeInput') as HTMLInputElement
     let idade = document.getElementById('idadeInput') as HTMLInputElement
@@ -23,10 +28,10 @@ export class HomeComponent {
     {
       this.addNome(nome.value, idade.value)
     }
-
+    debugger
     nome.value = "";
     idade.value = "";
-    
+    //this.srvSender.send(); 
   }
 
   addNome(nome: string, idade: string): void {

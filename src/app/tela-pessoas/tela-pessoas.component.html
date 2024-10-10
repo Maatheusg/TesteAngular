@@ -15,14 +15,27 @@
 <ng-template #myDialog>
   <div class="popup-overlay">
     <div class="popup-content">
-      <button class="close-btn">
-        <img src="assets/fecharicon.png" alt="Fechar" (click)="fecharCard()"/>
-      </button>
-      <h2>Nome</h2>
-      <h3>{{pessoaSelecionada.nome}}</h3>
-      <h2>Idade</h2>
-      <h3>{{pessoaSelecionada.idade}}</h3>
+      <img src="assets/fecharicon.png" alt="Fechar" class="close-btn" (click)="fecharCard()"/>
+      <!-- <button class="close-btn">
+      </button> -->
+  
+      <!-- Parte rolável -->
+      <div class="popup-scroll">
+        <h2>Nome</h2>
+        <h3>{{pessoaSelecionada.nome}}</h3>
+        <h2>Idade</h2>
+        <h3>{{pessoaSelecionada.idade}}</h3>
+        <h2>Telefone</h2>
+        <input type="text" name="telefone" id="telefoneId" value="{{pessoaSelecionada.telefone}}">
+        <h2>Endereço</h2>
+        <input type="text" name="endereco" id="enderecoId" value="{{pessoaSelecionada.endereco}}">
+        <h2>CPF</h2>
+        <input type="text" name="cpf" id="cpfId" value="{{pessoaSelecionada.cpf}}">
+      </div>
+  
+      <!-- Botão Salvar fora do scroll -->
+      <button class="salvar-btn" (click)="atualizarPessoa()">Salvar</button>
     </div>
   </div>
   
-</ng-template>
+</ng-template> 
