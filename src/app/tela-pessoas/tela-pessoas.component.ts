@@ -49,24 +49,52 @@ export class TelaPessoasComponent {
   }
 
   abrirCard(templateRef: TemplateRef<any>, pessoaid:number): void{
-    //this.pessoaSelecionada = this.pessoa;
-    debugger
+    //this.pessoaSelecionada = this.pessoa;   
     fetch('https://apimatheus.azurewebsites.net/api/Pessoas/' + pessoaid, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       }
-      })
-      .then((response) => response.text())
-      .then((result) => {return JSON.parse(result)})
-      .then((data) => {this.pessoaSelecionada = data; debugger})
-      .catch(error => {
-        console.error('Error:', error);
-      });
+    })
+    .then((response) => response.text())
+    .then((result) => {return JSON.parse(result)})
+    .then((data) => {this.pessoaSelecionada = data; })
+    .catch(error => {
+      console.error('Error:', error);
+    });
     this.dialog.open(templateRef);
   }
 
   fecharCard(): void{
     this.dialog.closeAll();
+  }
+
+  atualizarPessoa():void{    
+    debugger
+    let nome = this.pessoaSelecionada.nome
+    let idade = this.pessoaSelecionada.idade
+    let endereco = document.getElementById('enderecoId') as HTMLInputElement
+    let cpf = document.getElementById('cpfId') as HTMLInputElement
+    let telefone = document.getElementById('telefoneId') as HTMLInputElement
+    const raw = JSON.stringify({
+      "id": "", 
+      "nome": nome,
+      "idade": idade,
+      "telefone": telefone.value,
+      "endereco": endereco.value,
+      "cpf": cpf.value
+    });
+  
+    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/' + this.pessoaSelecionada.id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json' // Corrigir aqui (estava 'aplication/json' com erro de digitação)
+      },
+      body: raw // Aqui você já pode usar a variável "raw"
+    })
+    .then(res => {res.json();alert('Pessoa atualizada!')})
+    .catch(error => {
+      alert('Ocorreu um erro!');
+    });
   }
 }
