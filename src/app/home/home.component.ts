@@ -42,11 +42,11 @@ export class HomeComponent {
     fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueue', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // Corrigir aqui (estava 'aplication/json' com erro de digitação)
+        'Content-Type': 'application/json' 
       },
-      body: raw // Aqui você já pode usar a variável "raw"
+      body: raw 
     })
-    .then(res => {debugger;res.json()})
+    //.then(res => {debugger;res.json()})
     .then(data => {
       alert('Pessoa adicionada!');
     })
