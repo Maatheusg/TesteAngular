@@ -33,17 +33,20 @@ export class HomeComponent {
     const raw = JSON.stringify({
       "id": "",
       "nome": nome,
-      "idade": idade
+      "idade": idade,
+      "telefone": "",
+      "endereco": "",
+      "cpf": ""
     });
   
-    fetch('https://apimatheus.azurewebsites.net//api/Pessoas', {
+    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueue', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Corrigir aqui (estava 'aplication/json' com erro de digitação)
       },
       body: raw // Aqui você já pode usar a variável "raw"
     })
-    .then(res => res.json())
+    .then(res => {debugger;res.json()})
     .then(data => {
       alert('Pessoa adicionada!');
     })
