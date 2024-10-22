@@ -35,7 +35,7 @@ export class TelaPessoasComponent {
   apagarPessoa(idPessoa:string): void{
     if(confirm('Deseja mesmo apagar essa pessoa?'))
     {
-      fetch('https://apimatheus.azurewebsites.net/api/Pessoas/deletar'+idPessoa, {
+      fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueueDelete?id='+idPessoa, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ export class TelaPessoasComponent {
       "cpf": cpf.value
     });
   
-    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/' + this.pessoaSelecionada.id, {
+    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueuePut?id=' + this.pessoaSelecionada.id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json' // Corrigir aqui (estava 'aplication/json' com erro de digitação)

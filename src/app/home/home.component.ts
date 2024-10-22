@@ -39,7 +39,7 @@ export class HomeComponent {
       "cpf": ""
     });
   
-    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueue', {
+    fetch('https://apimatheus.azurewebsites.net/api/Pessoas/sendToQueueInsert', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' 
